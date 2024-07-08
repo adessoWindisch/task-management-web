@@ -31,3 +31,31 @@ p {
   font-size: 1rem;
   text-wrap: balance;
 }
+.grid-container {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  background-color: #006ec8;
+  color: white;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  min-width: 10rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-decoration: none;
+}
+.grid-item:hover,
+.grid-item:active,
+.selected {
+  background-color: #5c4b63;
+  color: #ffffff;
+}
