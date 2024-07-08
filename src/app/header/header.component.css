@@ -3,16 +3,12 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  width: 90%;
   max-width: 75rem;
-  margin: 1rem auto 2rem auto;
+  margin: 0.5rem auto 2rem auto;
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    #c6d9f0,
-    #cfdfff
-  );
-  padding: 1rem;
+  background: #ededed;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -33,29 +29,43 @@ p {
 }
 .grid-container {
   display: grid;
-  column-gap: 50px;
+  align-items: center;
+  column-gap: 20px;
   grid-template-columns: auto auto auto;
 }
+
 .grid-item {
+  width: 100px;
+}
+
+a {
+  display: inline-block; /* oder block, je nach Bedarf */
+  width: 90%; /* feste Breite, passen Sie diese nach Bedarf an */
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.5rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 0.5rem;
   background-color: #006ec8;
   color: white;
   border: none;
   font: inherit;
   cursor: pointer;
-  width: 100%;
-  min-width: 10rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   text-decoration: none;
+  text-align: center;
 }
-.grid-item:hover,
-.grid-item:active,
+
+a:active,
 .selected {
-  background-color: #5c4b63;
-  color: #ffffff;
+  background-color: #c4dff6;
+  color: black;
+}
+
+a:hover {
+  background-color: #c4dff6;
+  color: black;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }

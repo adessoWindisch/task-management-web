@@ -4,7 +4,7 @@ import { EmployeesComponent } from './employees/employees.component';
 
 export const routes: Routes = [
   {
-    path: '', // <your-domain>/
+    path: 'features', // <your-domain>/features
     component:MainContentComponent,
   },
   {
