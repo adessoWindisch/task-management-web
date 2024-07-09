@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Employee } from './employee.model';
+import { Employee } from './employee/employee.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,7 +24,7 @@ export class EmployeesService {
     return this.httpClient.delete(`${this.api}/${employeeId}`);
   }
 
-  public getEmployee(employeeId: number) {
+  public getEmployee(employeeId: number): Observable<Employee> {
     return this.httpClient.get<Employee>(`${this.api}/${employeeId}`);
   }
 

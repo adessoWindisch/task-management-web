@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { CORE_FEATURES } from './core-features';
+import { CORE_FEATURES } from './features.data';
 import { FeatureComponent } from './feature/feature.component';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
   imports: [FeatureComponent],
-  templateUrl: './main-content.component.html',
-  styleUrl: './main-content.component.css'
+  templateUrl: './features.component.html',
+  styleUrl: './features.component.css'
 })
-export class MainContentComponent {
+export class FeaturesComponent {
   coreFeatures = CORE_FEATURES;
   selectedFeatureId: string = "id1";
 

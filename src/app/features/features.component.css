@@ -1,8 +1,3 @@
-h1 {
-  font-size: 2rem;
-  margin: 0;
-  padding: 0;
-}
 
 p {
   margin: 1rem;
@@ -54,3 +49,10 @@ p {
 #core-concepts li p {
   font-size: 0.9rem;
 }
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+

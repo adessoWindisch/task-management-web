@@ -6,14 +6,19 @@
   </div>
   <div class="grid-container">
     <div class="grid-item">
-      <a routerLink="/features" routerLinkActive="selected">
+      <button mat-raised-button routerLink="/features" routerLinkActive="active-route" matTooltip="Switch to Features page!">
         <span>Features</span>
-      </a>
+      </button>
     </div>
     <div class="grid-item">
-      <a routerLink="/employees" routerLinkActive="selected">
+      <button mat-raised-button routerLink="/employees" routerLinkActive="active-route" matTooltip="Switch to Employee list!">
         <span>Employees</span>
-      </a>
+      </button>
+    </div>
+    <div class="grid-item">
+      <button mat-raised-button routerLink="/tasks" routerLinkActive="active-route" matTooltip="Switch to Task list!">
+        <span>Tasks</span>
+      </button>
     </div>
   </div>
 </header>
