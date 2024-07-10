@@ -1,20 +1,8 @@
 <main>
   <section id="newEmployee">
-    <h1>{{ isNewEmployee ? 'Create new Employee' : 'Update Employee' }}</h1>
+    <h1>{{ isNewEmployee ? 'Create new Employee' : 'Update Employee (' + employee.employeeId + ')' }} </h1>
 
     <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
-      <mat-form-field appearance="outline">
-        <mat-label>Employee Id</mat-label>
-        <input
-          matInput
-          placeholder="Employee Id"
-          name="employeeId"
-          [(ngModel)]="employee.employeeId"
-          disabled
-        />
-        <mat-icon matSuffix fontIcon="fingerprint"></mat-icon>
-      </mat-form-field>
-
       <mat-form-field appearance="outline">
         <mat-label>Org Id</mat-label>
         <input
@@ -22,6 +10,7 @@
           placeholder=""
           name="orgId"
           [(ngModel)]="employee.orgId"
+          required
         />
         <mat-icon matSuffix fontIcon="home"></mat-icon>
       </mat-form-field>
@@ -33,6 +22,7 @@
           placeholder=""
           name="firstName"
           [(ngModel)]="employee.firstName"
+          required
         />
         <mat-icon matSuffix fontIcon="person"></mat-icon>
       </mat-form-field>
@@ -44,6 +34,7 @@
           placeholder=""
           name="lastName"
           [(ngModel)]="employee.lastName"
+          required
         />
         <mat-icon matSuffix fontIcon="person"></mat-icon>
       </mat-form-field>
@@ -74,7 +65,7 @@
         <button mat-raised-button type="submit" class="save-button">
           Save
         </button>
-        <button mat-raised-button class="back-button" routerLink="/employees">
+        <button mat-raised-button type="button" class="back-button" routerLink="/employees">
           Go to Employee List
         </button>
       </div>

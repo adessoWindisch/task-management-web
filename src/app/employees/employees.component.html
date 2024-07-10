@@ -3,50 +3,48 @@
     <h1>Employee Management</h1>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- EmployeeID -->
       <ng-container matColumnDef="employeeId">
         <th mat-header-cell *matHeaderCellDef>Employee ID</th>
         <td mat-cell *matCellDef="let element">{{ element.employeeId }}</td>
       </ng-container>
 
-      <!-- OrgID -->
       <ng-container matColumnDef="orgId">
         <th mat-header-cell *matHeaderCellDef>OrgID</th>
         <td mat-cell *matCellDef="let element">{{ element.orgId }}</td>
       </ng-container>
 
-      <!-- FirstName -->
       <ng-container matColumnDef="firstName">
         <th mat-header-cell *matHeaderCellDef>First Name</th>
         <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
       </ng-container>
 
-      <!-- LastName -->
       <ng-container matColumnDef="lastName">
         <th mat-header-cell *matHeaderCellDef>Last Name</th>
         <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
       </ng-container>
 
-      <!-- EMail -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef>EMail</th>
         <td mat-cell *matCellDef="let element">{{ element.email }}</td>
       </ng-container>
 
-      <!-- MobileNumer -->
       <ng-container matColumnDef="mobileNumber">
         <th mat-header-cell *matHeaderCellDef>Mobile Number</th>
         <td mat-cell *matCellDef="let element">{{ element.mobileNumber }}</td>
       </ng-container>
 
-      <!-- Actions -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
           <button mat-icon-button (click)="editEmployee(element.employeeId)">
             <mat-icon>edit</mat-icon>
           </button>
+        </td>
+      </ng-container>
 
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
           <button mat-icon-button (click)="deleteEmployee(element.employeeId)">
             <mat-icon>delete</mat-icon>
           </button>

@@ -16,9 +16,23 @@ main {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
+#newTask {
+  margin-top: 1rem;
+  width: 20%;
+  margin-left: 80%;
+}
+
 h1 {
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
+.mat-button,
+.mat-mdc-raised-button {
+  border-radius: 5px;
+}
+
+.mat-mdc-table {
+  width: 60rem;
+}

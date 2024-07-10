@@ -24,7 +24,8 @@ export class EmployeesComponent {
     'lastName',
     'email',
     'mobileNumber',
-    'actions'
+    'edit',
+    'delete'
 ];
 
   constructor(private employeeService: EmployeesService, private router: Router) {

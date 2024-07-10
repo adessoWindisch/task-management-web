@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
@@ -33,7 +33,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './employee.component.css'
 })
 export class EmployeeComponent implements OnInit {
-  @Input({ required: true }) employeeId!: string;
 
   employee: Employee = {
     employeeId: 0,
@@ -50,9 +49,8 @@ export class EmployeeComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar) {
-    console.log(`Constructor-Employee ID: ${this.employeeId}`);
-
   }
+
   ngOnInit(): void {
     const employeeId = this.route.snapshot.paramMap.get('employeeId');
     if (employeeId) {
@@ -70,7 +68,6 @@ export class EmployeeComponent implements OnInit {
         }
       );
     }
-    console.log(`OnInt-Employee ID: ${this.employeeId}`);
   }
 
   saveEmployee(employeeForm: NgForm): void {
@@ -121,4 +118,3 @@ export class EmployeeComponent implements OnInit {
     }
   }
 }
-

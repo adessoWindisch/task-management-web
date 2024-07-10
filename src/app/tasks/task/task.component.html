@@ -1,5 +1,101 @@
 <main>
   <section id="newTask">
-    <h1>Create new Task</h1>
+    <h1>
+      {{ isNewTask ? "Create new Task" : "Update Task (" + task.taskId + ")" }}
+    </h1>
+
+    <form #taskForm="ngForm" (ngSubmit)="saveTask(taskForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Employee</mat-label>
+        <mat-select matInput name="employee" [(ngModel)]="task.employeeId">
+          <mat-option [value]="0">None</mat-option>
+          @for (employee of employees; track employee.employeeId) {
+          <mat-option [value]="employee.employeeId">
+            {{ employee.employeeId }} - {{ employee.firstName }}
+            {{ employee.lastName }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select matInput name="type" [(ngModel)]="task.type">
+          <mat-option value="DEVELOPMENT">Development</mat-option>
+          <mat-option value="TESTING">Testing</mat-option>
+          <mat-option value="ANALYSIS">Analysis</mat-option>
+          <mat-option value="DESIGN">Design</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select matInput name="status" [(ngModel)]="task.status">
+          <mat-option value="OPEN">Open</mat-option>
+          <mat-option value="IN_PROGRESS">In Progress</mat-option>
+          <mat-option value="DONE">Done</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Priority</mat-label>
+        <mat-select matInput name="priority" [(ngModel)]="task.priority">
+          <mat-option value="LOW">Low</mat-option>
+          <mat-option value="MEDIUM">Medium</mat-option>
+          <mat-option value="HIGH">High</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="description"
+          [(ngModel)]="task.description"
+        />
+        <mat-icon matSuffix fontIcon="description"></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="dpstart"
+          placeholder=""
+          name="startDate"
+          [(ngModel)]="task.startDate"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="dpstart">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #dpstart></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="dpend"
+          placeholder=""
+          name="endDate"
+          [(ngModel)]="task.endDate"
+          [matDatepickerFilter]="myFilter"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="dpend">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #dpend></mat-datepicker>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button type="submit" class="save-button">
+          Save
+        </button>
+        <button mat-raised-button type="button" class="back-button" routerLink="/tasks">
+          Go to Task List
+        </button>
+      </div>
+    </form>
   </section>
 </main>
