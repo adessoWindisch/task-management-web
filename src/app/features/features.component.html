@@ -1,0 +1,17 @@
+<main>
+  <section id="core-concepts">
+    <h1>Angular Main Features</h1>
+    <ul>
+      @for (feature of coreFeatures; track feature.id) {
+      <li>
+        <app-feature
+          [feature]="feature"
+          [selected]="feature.id === selectedFeatureId"
+          (select)="onSelectFeature($event)"
+        />
+      </li>
+      }
+    </ul>
+    <p>{{ selectedFeature ? selectedFeature.description : "" }}</p>
+  </section>
+</main>

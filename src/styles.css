@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+html,  app-root {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: white;
+  color: #006ec8;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+button {
+  display: inline-block; /* oder block, je nach Bedarf */
+  width: 90%; /* feste Breite, passen Sie diese nach Bedarf an */
+  align-items: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #006ec8;
+  color: white;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:active,
+.selected {
+  background-color: #c4dff6;
+  color: black;
+}
+
+button:hover {
+  background-color: #c4dff6;
+  color: black;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+

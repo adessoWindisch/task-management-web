@@ -1,0 +1,8 @@
+<div>
+  <button [class.active]="selected" (click)="onSelectFeature()">
+    <img [src]="imagePath" [alt]="imagePath" />
+    <span>
+      <p>{{ feature.title }}</p>
+    </span>
+  </button>
+</div>

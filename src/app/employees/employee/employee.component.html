@@ -1,0 +1,74 @@
+<main>
+  <section id="newEmployee">
+    <h1>{{ isNewEmployee ? 'Create new Employee' : 'Update Employee (' + employee.employeeId + ')' }} </h1>
+
+    <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Org Id</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="orgId"
+          [(ngModel)]="employee.orgId"
+          required
+        />
+        <mat-icon matSuffix fontIcon="home"></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="firstName"
+          [(ngModel)]="employee.firstName"
+          required
+        />
+        <mat-icon matSuffix fontIcon="person"></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="lastName"
+          [(ngModel)]="employee.lastName"
+          required
+        />
+        <mat-icon matSuffix fontIcon="person"></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="email"
+          [(ngModel)]="employee.email"
+        />
+        <mat-icon matSuffix fontIcon="email"></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input
+          matInput
+          placeholder=""
+          name="mobileNumber"
+          [(ngModel)]="employee.mobileNumber"
+        />
+        <mat-icon matSuffix fontIcon="phone"></mat-icon>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button type="submit" class="save-button">
+          Save
+        </button>
+        <button mat-raised-button type="button" class="back-button" routerLink="/employees">
+          Go to Employee List
+        </button>
+      </div>
+    </form>
+  </section>
+</main>
