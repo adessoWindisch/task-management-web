@@ -28,6 +28,7 @@ export class TasksComponent {
     'description',
     'startDate',
     'endDate',
+    'done',
     'edit',
     'delete'
   ];
@@ -110,5 +111,20 @@ export class TasksComponent {
     }
     return '';
   }
+
+      // Neue Methode zum Setzen des Status auf DONE
+      setTaskStatusToDone(taskId: number) {
+        this.taskService.updateTaskStatus(taskId, 'DONE').subscribe(
+            {
+                next: (res) => {
+                    console.log(`Task with ID: ${taskId} set to DONE`);
+                    this.getTaskList();
+                },
+                error: (err: HttpErrorResponse) => {
+                    console.log(err);
+                }
+            }
+        );
+    }
 }
 
