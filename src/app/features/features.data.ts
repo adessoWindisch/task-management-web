@@ -9,14 +9,14 @@ export const CORE_FEATURES = [
   {
     id: "2",
     image: "Angular_CLI_small.png",
-    title: "Umfangreiches\n\rCLI-Tool",
+    title: "Umfangreiches\nCLI-Tool",
     description:
       "Das Angular CLI (Command Line Interface) ist ein leistungsfähiges Werkzeug, das Entwicklern hilft, Angular-Anwendungen effizient zu erstellen und zu verwalten. Mit dem CLI können Entwickler Projekte initialisieren, Komponenten generieren, Tests durchführen, Builds erstellen und vieles mehr, was die Entwicklungszeit verkürzt und die Konsistenz in den Projekten erhöht.",
   },
   {
     id: "3",
     image: "Angular_for_if_small.png",
-    title: "Neue Anweisungen\n\r@for und @if",
+    title: "Neue Anweisungen\n@for und @if",
     description:
       "Angular bietet seit neueren Versionen die Möglichkeit, Logik direkt in den Templates durch die Verwendung von @for und @if Anweisungen einzubauen. Diese neuen Anweisungen ermöglichen eine einfache und elegante Implementierung von Schleifen und Bedingungslogik in den HTML-Templates.",
   },

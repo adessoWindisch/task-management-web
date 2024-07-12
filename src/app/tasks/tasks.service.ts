@@ -38,9 +38,4 @@ export class TasksService {
   public updateTask(Task: Task) {
     return this.httpClient.put<Task>(`${this.api}`, Task);
   }
-
-    // Neue Methode zum Aktualisieren des Task-Status
-    public updateTaskStatus(taskId: number, status: string) {
-      return this.httpClient.patch<string>(`${this.api}/${taskId}`, { status } , { headers: this.headers });
-    }
 }

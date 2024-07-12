@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-footer',
   standalone: true,
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  currentDate: Date = new Date();
+
 }

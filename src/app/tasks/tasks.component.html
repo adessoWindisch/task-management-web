@@ -55,30 +55,17 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="done">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let task">
-          <button mat-icon-button (click)="setTaskStatusToDone(task.taskId)">
-        <mat-icon>done</mat-icon>
-          </button>
-        </td>
-      </ng-container>
-
       <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button (click)="editTask(element.taskId)">
-            <mat-icon>edit</mat-icon>
-          </button>
+          <button mat-raised-button (click)="editTask(element.taskId)">Edit</button>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button (click)="deleteTask(element.taskId)">
-            <mat-icon>delete</mat-icon>
-          </button>
+          <button mat-raised-button (click)="deleteTask(element.taskId)">Delete</button>
         </td>
       </ng-container>
 
