@@ -96,6 +96,13 @@ mat-form-field {
   font-size: 14px !important;
 }
 
+mat-error {
+  font-size: 10px;
+  color: red;
+  margin-top: -15px; /* Passen Sie diesen Wert an, um die gewünschte Position zu erreichen */
+  margin-bottom: 10px; /* Fügt etwas Abstand zum nächsten Element hinzu */
+}
+
 .save-button {
   background: #006ec8;
   color: white;
