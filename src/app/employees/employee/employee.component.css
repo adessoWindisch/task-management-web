@@ -98,14 +98,19 @@ mat-form-field {
 
 mat-error {
   font-size: 10px;
-  color: red;
+  margin-top: -15px; /* Passen Sie diesen Wert an, um die gewünschte Position zu erreichen */
+  margin-bottom: 10px; /* Fügt etwas Abstand zum nächsten Element hinzu */
+}
+
+mat-hint {
+  font-size: 10px;
   margin-top: -15px; /* Passen Sie diesen Wert an, um die gewünschte Position zu erreichen */
   margin-bottom: 10px; /* Fügt etwas Abstand zum nächsten Element hinzu */
 }
 
 .save-button {
-  background: #006ec8;
-  color: white;
+  /* background: #006ec8; */
+  /* color: white; */
   width: 16%;
   margin-top: 0;
   margin-left: 47%;

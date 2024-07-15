@@ -1,6 +1,12 @@
 <main>
   <section id="newEmployee">
-    <h1>{{ isNewEmployee ? 'Create new Employee' : 'Update Employee (' + employee.employeeId + ')' }} </h1>
+    <h1>
+      {{
+        isNewEmployee
+          ? "Create new Employee"
+          : "Update Employee (" + employee.employeeId + ")"
+      }}
+    </h1>
 
     <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
       <mat-form-field appearance="outline">
@@ -14,6 +20,17 @@
           minlength="3"
           maxlength="10"
         />
+<!--         <mat-hint>Enter a unique Org Id</mat-hint>
+        <mat-hint align="end">{{ employee.orgId.length || 0 }}/10</mat-hint> -->
+        <mat-error
+          *ngIf="
+            !employee.orgId ||
+            employee.orgId.length < 3 ||
+            employee.orgId.length > 10
+          "
+        >
+          Org Id is required and must be between 3 and 10 characters
+        </mat-error>
         <mat-icon matSuffix fontIcon="home"></mat-icon>
       </mat-form-field>
 
@@ -48,7 +65,9 @@
           placeholder=""
           name="email"
           [(ngModel)]="employee.email"
+          email
         />
+        <mat-hint>Enter a valid email</mat-hint>
         <mat-icon matSuffix fontIcon="email"></mat-icon>
       </mat-form-field>
 
@@ -64,10 +83,15 @@
       </mat-form-field>
 
       <div>
-        <button mat-raised-button type="submit" class="save-button">
+        <button mat-raised-button type="submit" class="save-button" color="primary" [disabled]="employeeForm.invalid">
           Save
         </button>
-        <button mat-raised-button type="button" class="back-button" routerLink="/employees">
+        <button
+          mat-raised-button
+          type="button"
+          class="back-button"
+          routerLink="/employees"
+        >
           Go to Employee List
         </button>
       </div>

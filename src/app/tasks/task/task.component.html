@@ -89,7 +89,7 @@
       </mat-form-field>
 
       <div>
-        <button mat-raised-button type="submit" class="save-button">
+        <button mat-raised-button type="submit" class="save-button" color="primary" [disabled]="taskForm.invalid">
           Save
         </button>
         <button mat-raised-button type="button" class="back-button" routerLink="/tasks">

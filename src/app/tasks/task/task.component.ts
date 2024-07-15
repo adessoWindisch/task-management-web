@@ -14,7 +14,7 @@ import { TasksService } from '../tasks.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { Employee } from '../../employees/employee/employee.model';
 import { EmployeesService } from '../../employees/employees.service';
@@ -22,7 +22,9 @@ import { EmployeesService } from '../../employees/employees.service';
 @Component({
   selector: 'app-task',
   standalone: true,
-  providers: [provideNativeDateAdapter()],
+  providers: [provideNativeDateAdapter(),
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
+  ],
   imports: [
     RouterLink,
     MatButton,
@@ -153,11 +155,7 @@ export class TaskComponent implements OnInit {
     if (!this.task.startDate) {
       return true; // Allow all dates if no start date is set
     }
-
-    const date = d || new Date();
-    console.log("date: " + date);
-    console.log("startdate: " + this.task.startDate);
-
+    const eDate: Date = d || new Date();
     return true;
   };
 

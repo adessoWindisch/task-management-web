@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
@@ -28,6 +29,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     FormsModule,
     MatDividerModule,
     MatGridListModule,
+    CommonModule
   ],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
