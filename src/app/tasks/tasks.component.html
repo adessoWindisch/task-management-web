@@ -12,7 +12,8 @@
       <!-- EmployeeID -->
       <ng-container matColumnDef="employeeName">
         <th mat-header-cell *matHeaderCellDef>Employee</th>
-        <td mat-cell *matCellDef="let element">{{ getEmployeeName(element.employeeId) }}</td>
+        <!-- Subscribe auf die employee names -->
+        <td mat-cell *matCellDef="let element">{{ (employeeNames | async)?.get(element.employeeId) }}</td>
       </ng-container>
 
       <!-- Type -->
